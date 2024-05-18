@@ -13,12 +13,12 @@ function preload() {
 }
 
 function setup () {
-  let main_canvas = createCanvas(1920, 1080);
+  let main_canvas = createCanvas(3000, 2000);
   main_canvas.parent('canvasContainer');
 
   imageMode(CENTER);
   noStroke();
-  background(255, 0, 0);
+  background(32, 32, 32);
   sourceImg.loadPixels();
   maskImg.loadPixels();
 }
@@ -31,11 +31,11 @@ function draw () {
     let mask = maskImg.get(x, y);
     fill(pix);
     if(mask[0] > 128) {
-      let pointSize = 10;
+      let pointSize = 11;
       ellipse(x, y, pointSize, pointSize);
     }
     else {
-      let pointSize = 20;
+      let pointSize = 3;
       rect(x, y, pointSize, pointSize);    
     }
   }
